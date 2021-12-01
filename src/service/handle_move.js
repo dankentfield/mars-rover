@@ -1,5 +1,6 @@
 import {PLAYER_STATE} from "../domain/robot/types";
 import updateRobotState from "../domain/robot/update_robot_state";
+import checkIsOutsideGrid from "../domain/grid/check_is_outside_grid";
 
 export default function handleMove({ move, robotState, grid }) {
     if(robotState.state === PLAYER_STATE.LOST) return { robotState }
@@ -9,7 +10,7 @@ export default function handleMove({ move, robotState, grid }) {
       robotState
     })
 
-    const isOutsideGrid = updatedRobot.x > grid.x || updatedRobot.y > grid.y || updatedRobot.y < 0 || updatedRobot.x < 0
+    const isOutsideGrid = checkIsOutsideGrid(updatedRobot, grid)
 
     if(isOutsideGrid){
       return {
