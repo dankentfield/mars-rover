@@ -1,0 +1,23 @@
+{
+    "name": "Daniel Kentfield",
+    "version": "1.0.0",
+    "description": "Mars robot game",
+    "main": "src/cli.js",
+    "scripts": {
+        "build": "rm -rf dist/* && npm run build:js",
+        "build:js": "babel src --out-dir dist --copy-files --source-maps inline",
+        "test": "jest .",
+        "test-watch": "jest --watchAll"
+    },
+    "author": "James Ilaki",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/node": "^7.8.7",
+        "@babel/preset-env": "^7.9.0",
+        "jest": "^25.2.3"
+    },
+    "dependencies": {
+    }
+}
